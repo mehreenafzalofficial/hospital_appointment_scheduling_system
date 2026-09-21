@@ -1,0 +1,122 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2907
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red98\green0\blue117;\red223\green223\blue223;
+\red52\green52\blue52;\red135\green136\blue100;\red16\green120\blue67;\red152\green0\blue15;\red109\green109\blue109;
+}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c46667\c0\c53333;\cssrgb\c89804\c89804\c89804;
+\cssrgb\c26667\c26667\c26667;\cssrgb\c60000\c60000\c46667;\cssrgb\c0\c53333\c33333;\cssrgb\c66667\c6667\c6667;\cssrgb\c50196\c50196\c50196;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 CREATE TABLE Room (\
+    RNo VARCHAR(50) PRIMARY KEY,\
+    Floor VARCHAR(50),\
+    Department VARCHAR(100)\
+);\
+\
+CREATE TABLE Staff (\
+    SID VARCHAR(50) PRIMARY KEY,\
+    Name VARCHAR(100) NOT NULL,\
+    Position VARCHAR(100),\
+    Phone VARCHAR(20)\
+);\
+\
+CREATE TABLE Patient (\
+    PID VARCHAR(50) PRIMARY KEY,\
+    Name VARCHAR(100) NOT NULL,\
+    Age INT,\
+    Gender VARCHAR(20),\
+    Phone VARCHAR(20),\
+    Email VARCHAR(100)\
+);\
+\
+CREATE TABLE Doctors (\
+    DID VARCHAR(50) PRIMARY KEY,\
+    Name VARCHAR(100) NOT NULL,\
+    Specialization VARCHAR(100),\
+    Phone VARCHAR(20),\
+    SID VARCHAR(50),\
+    RNo VARCHAR(50),\
+    FOREIGN KEY (SID) REFERENCES Staff(SID),\
+    FOREIGN KEY (RNo) REFERENCES Room(RNo)\
+);\
+\
+CREATE TABLE Appointments (\
+    AID VARCHAR(50) PRIMARY KEY,\
+    Date DATE NOT NULL,\
+    Time TIME NOT NULL,\
+    Status VARCHAR(50),\
+    PID VARCHAR(50),\
+    DID VARCHAR(50),\
+    SID VARCHAR(50),\
+    FOREIGN KEY (PID) REFERENCES Patient(PID),\
+    FOREIGN KEY (DID) REFERENCES Doctors(DID),\
+    FOREIGN KEY (SID) REFERENCES Staff(SID)\
+);\
+\
+CREATE TABLE Notification (\
+    NID VARCHAR(50) PRIMARY KEY,\
+    Type VARCHAR(50),\
+    Status VARCHAR(50),\
+    Date DATE,\
+    Message TEXT,\
+    PID VARCHAR(50),\
+    AID VARCHAR(50),\
+    FOREIGN KEY (PID) REFERENCES Patient(PID),\
+    FOREIGN KEY (AID) REFERENCES Appointments(AID)\
+);\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 INSERT INTO Room (RNo, Floor, Department) VALUES \
+('R-101', '1st Floor', 'Cardiology'), \
+('R-102', '2nd Floor', 'Neurology'), \
+('R-103', '3rd Floor', 'Dermatology\'92);\
+\
+INSERT INTO Staff (SID, Name, Position, Phone) VALUES \
+('S-01', 'Admin Ali', 'Receptionist', '0300-00000000'),\
+('S-02', 'Nurse Fatima', 'Head Nurse', '0301-00000000');\
+\kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 INSERT INTO Doctors (DID, Name, Specialization, Phone, SID, RNo) VALUES \
+('D-01', 'Dr. Ahmed', 'Cardiologist', '0302-0000000', 'S-01', 'R-101'),\
+('D-02', 'Dr. Sara', 'Neurologist', '0303-0000000', 'S-01', 'R-102'),\
+('D-03', 'Dr. Ali', 'Dermatologist', '0304-0000000', 'S-02', 'R-103');\
+\
+INSERT INTO Patient (PID, Name, Age, Gender, Phone, Email) VALUES \
+('P-01', 'Ali Hassan', 25, 'Male', '0312-9876543', 'alihassan@gmail.com'),\
+('P-02', 'Ammna Fatima', 28, 'Female', '0300-1234567', 'ammna@gmail.com'),\
+('P-03', 'Sara Ahmad', 22, 'Female', '0321-1122334', 'sara@gmail.com');\
+\
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "http://localhost/phpmyadmin/url.php?url=https://dev.mysql.com/doc/refman/8.0/en/insert.html"}}{\fldrslt 
+\fs26\fsmilli13120 \cf3 \cb4 \strokec3 INSERT}}
+\fs26\fsmilli13120 \cf5 \cb4 \strokec5  \cf3 \strokec3 INTO\cf5 \strokec5  Appointments \cf6 \strokec6 (\cf5 \strokec5 AID, \cf7 \strokec7 Date\cf5 \strokec5 , \cf7 \strokec7 Time\cf5 \strokec5 , \cf3 \strokec3 Status\cf5 \strokec5 , PID, DID, SID\cf6 \strokec6 )\cf5 \strokec5  {\field{\*\fldinst{HYPERLINK "http://localhost/phpmyadmin/url.php?url=https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html%23function_values"}}{\fldrslt \cf3 \strokec3 VALUES}} \cf6 \strokec6 (\cf8 \strokec8 'A-01'\cf5 \strokec5 , \cf8 \strokec8 '2026-08-20'\cf5 \strokec5 , \cf8 \strokec8 '10:00:00'\cf5 \strokec5 , \cf8 \strokec8 'Confirmed'\cf5 \strokec5 , \cf8 \strokec8 'P-01'\cf5 \strokec5 , \cf8 \strokec8 'D-01'\cf5 \strokec5 , \cf8 \strokec8 'S-01'\cf6 \strokec6 )\cf5 \strokec5 , \cf6 \strokec6 (\cf8 \strokec8 'A-02'\cf5 \strokec5 , \cf8 \strokec8 '2026-08-20'\cf5 \strokec5 , \cf8 \strokec8 '02:30:00'\cf5 \strokec5 , \cf8 \strokec8 'Confirmed'\cf5 \strokec5 , \cf8 \strokec8 'P-02'\cf5 \strokec5 , \cf8 \strokec8 'D-02'\cf5 \strokec5 , \cf8 \strokec8 'S-01'\cf6 \strokec6 )\cf5 \strokec5 , \cf6 \strokec6 (\cf8 \strokec8 'A-03'\cf5 \strokec5 , \cf8 \strokec8 '2026-08-21'\cf5 \strokec5 , \cf8 \strokec8 '11:00:00'\cf5 \strokec5 , \cf8 \strokec8 'Confirmed'\cf5 \strokec5 , \cf8 \strokec8 'P-03'\cf5 \strokec5 , \cf8 \strokec8 'D-03'\cf5 \strokec5 , \cf8 \strokec8 'S-02\'92\cf6 \strokec6 );\
+\
+INSERT INTO Notification (NID, Type, Status, Date, Message, PID, AID) VALUES \
+('N-01', 'SMS', 'Sent', '2026-09-25', 'Your appointment with Dr. Ahmed is confirmed.', 'P-01', 'A-01'),\
+('N-02', 'Email', 'Unread', '2026-09-26', 'Reminder for your upcoming neurology appointment.', 'P-02', 'A-02');\
+\
+\
+\
+ALTER TABLE Patient ADD COLUMN password VARCHAR(255);\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf9 \cb2 \strokec9 \
+UPDATE Patient SET password = 'alihassan123' WHERE PID = 'P-01';\
+UPDATE Patient SET password = 'ammna123' WHERE PID = 'P-02';\
+UPDATE Patient SET password = 'sara123' WHERE PID = 'P-03';\
+\
+\
+\
+\
+ALTER TABLE Staff ADD COLUMN Password VARCHAR(255);\
+ALTER TABLE Staff ADD COLUMN Email VARCHAR(100);\
+\
+UPDATE Staff SET Password = 'ali123' WHERE SID = 'S-01';\
+UPDATE Staff SET Password = 'fatima123' WHERE SID = 'S-02';\
+UPDATE Staff SET Email = 'ali@gmail.com' WHERE SID = 'S-01';\
+UPDATE Staff SET Email = 'fatima@gmail.com' WHERE SID = 'S-02';}
