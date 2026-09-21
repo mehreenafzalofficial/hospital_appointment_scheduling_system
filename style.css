@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: url('https://t3.ftcdn.net/jpg/02/95/46/40/360_F_295464037_VmCrSPB7PYpe20QaQvutq56NdpB3sOgE.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    width: 380px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+}
+
+.login-box h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #eee;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 35px 10px 5px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    outline: none;
+    color: white;
+    font-size: 16px;
+}
+
+.input-group .icon {
+    position: absolute;
+    right: 5px;
+    top: 25px;
+    font-size: 18px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.options a, p a {
+    color: white;
+    text-decoration: none;
+}
+.options a:hover, p a:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #ff6b6b, #feca57);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    transform: scale(1.05);
+}
+button a{
+    color: white;
+    text-decoration: none;
+}
+
+p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+nav{
+     width: 100%;
+     height: 75px;
+     line-height: 75px;
+     padding: 0px 150px;
+     position:fixed;
+     margin-bottom: 550px;
+     display: inline-block;
+}
+nav .logo{
+    font-style: italic;
+    font-weight: bold;
+    float: left;
+    color: grey;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+nav .logo p{
+    font-size: 50px;
+    font-weight: 700;
+}
+nav ul{
+    float: right;
+}
+nav li{
+    display: inline-block;
+    margin-top: 20px;
+}
+nav li a{
+    font-size: 18px;
+    padding: 0px 20px;
+    color: white;
+    text-decoration: none;
+}
+nav li a:hover{
+    background-color: blue;
+    transition: all 0.4s ease 0s;
+    
+}
+.text{
+       color: white;
+       font-size: large;
+       letter-spacing: 1.1px;
+       font-size: 30px;
+}
+
+
+.explain p{
+    margin-bottom: 10px;
+    color: white;
+    line-height: 25px; 
+    letter-spacing: 0.5px;
+    font-size: 30px;
+}
+
+.explain p1{
+    color: white;
+    line-height: 30px; 
+    letter-spacing: 0.5px;
+    font-size: 20px;
+}
+
+/*Form*/
+.box.glass {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 18px;
+    padding: 30px;
+    width: 100%;
+    max-width: 550px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    color: #fff;
+}
+
+.box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+.form-group { display: flex; flex-direction: column; }
+
+.form-group label {
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: #eee;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(0,0,0,0.25);
+    color: #fff;
+    outline: none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: #ccc; }
+
+.box.glass {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+.box h2 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+.form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+.form-group label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: #eee;
+}
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(0,0,0,0.2);
+    color: #fff;
+    outline: none;
+}
+.form-group input::placeholder {
+    color: #ccc;
+}
+/*tables*/
+
+.table-box {
+    overflow-x: auto;
+}
+.tbl {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+.tbl thead th {
+    background: rgba(79, 70, 229, 0.8); /* Purple glass header */
+    color: #fff;
+    padding: 12px 10px;
+    text-align: left;
+}
+.tbl tbody td {
+    padding: 12px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.tbl td span {
+    display: block;
+    font-size: 12px;
+    color: #ddd;
+}
+.tbl tbody tr:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+
+        .dashboard-box {
+            width: 500px;
+            margin: 100px auto;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .dashboard-box h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .dashboard-box button {
+            display: block;
+            width: 80%;
+            padding: 12px;
+            margin: 15px auto;
+           
+        }
+.dashboard-box a {
+    text-decoration: none;
+}
+  .dashboard-box back {
+        display: block;
+        width: fit-content;
+        margin: 25px auto;
+        color: white;
+        
+    }
+.back {
+    display: block;
+    width: fit-content;
+    margin: 10px auto;
+    color: white;
+}
+
+
+    
+
