@@ -43,6 +43,7 @@ The application runs on a relational database containing the following core tabl
    * Open a new browser tab and navigate to:
    * Plaintext
    * http://localhost/dbproject
+## Developed as part of computer science academic projects.
 ## 📸 Screenshots
 <img width="1404" height="753" alt="Screenshot 2026-09-22 at 3 17 56 AM" src="https://github.com/user-attachments/assets/7bd53578-1bda-465f-a19b-857ae9b2f4d4" />
 <img width="1404" height="753" alt="Screenshot 2026-09-22 at 3 18 10 AM" src="https://github.com/user-attachments/assets/8b767fb6-e729-4348-ac2b-c775568be33b" />
