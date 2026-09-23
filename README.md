@@ -1,15 +1,18 @@
 # hospital_appointment_scheduling_system
 # 🏥 Hospital Appointment Scheduling System (HASS)
 
-A dynamic, database-driven full-stack web application designed to streamline hospital operations, manage patient and staff authentication, and handle appointment bookings efficiently.
+A dynamic, database-driven, web-page built to streamline hospital operations — patient records, staff account, doctor management, and appointment scheduling efficiently— all in one place.
 
 ## 🚀 Features
 
-* **Secure Authentication:** Separate, secure email and password login systems for both Patients and Staff.
-* **Role-Based Access Control:** Dynamic session handling to restrict pages based on user roles (`Patient` or `Staff`).
-* **Appointment Management:** Staff and patients can book, view, and manage appointments linked dynamically with doctors and medical records.
-* **Doctor Directory:** Integrated doctor listings showing specializations and details.
-* **Modern UI/UX:** Clean and responsive interface styled with custom CSS and glassmorphism design elements.
+* **Secure Authentication:** Separate email and password login systems for both Patients and Staff.
+* **Role-Based Access Control:** Session-based access restricting pages so only logged-in Staff/Patients can perform actions meant for their role.
+* **Patient Registration:** Patients can create accounts with details like name, age, gender, and contact info.
+* **Staff Registration:** Staff members can register with role/position and contact details.
+* **Doctor Management:** Staff can add new doctors directly from the dashboard — each doctor is automatically linked to the staff member who registered them and assigned an available hospital room.
+* **Appointment Booking:** Book, view, and manage appointments by selecting a patient, doctor, date, and time.
+* **Doctor Directory:** A live, database-driven doctor listing showing specialization, contact details, and assigned room — updates automatically as new doctors are added.
+* **Modern UI/UX:** Clean, responsive interface styled with custom CSS and glassmorphism design elements.
 
 ## 🛠️ Tech Stack
 
@@ -46,12 +49,21 @@ The application runs on a relational database containing the following core tabl
 ## Developed as part of computer science academic projects.
 ## 📸 Screenshots
 <img width="1404" height="753" alt="Screenshot 2026-09-22 at 3 17 56 AM" src="https://github.com/user-attachments/assets/7bd53578-1bda-465f-a19b-857ae9b2f4d4" />
-<img width="1404" height="753" alt="Screenshot 2026-09-22 at 3 18 10 AM" src="https://github.com/user-attachments/assets/8b767fb6-e729-4348-ac2b-c775568be33b" />
+<img width="1404" height="753" alt="Screenshot 2026-09-24 at 1 12 23 AM" src="https://github.com/user-attachments/assets/af53f912-f5e6-466a-8aa4-dcacff151251" />
+<img width="1404" height="753" alt="Screenshot 2026-09-24 at 1 12 30 AM" src="https://github.com/user-attachments/assets/c8be48b5-4dc4-42b7-b08c-08ec2c5ba910" />
+<img width="1404" height="753" alt="Screenshot 2026-09-24 at 1 13 15 AM" src="https://github.com/user-attachments/assets/47640474-124c-436b-b642-f3553c8db39c" />
+<img width="1404" height="753" alt="Screenshot 2026-09-24 at 1 12 23 AM" src="https://github.com/user-attachments/assets/7655e9ca-3ac4-4fb0-b2e2-e0d9d1bd5b83" />
 <img width="1404" height="753" alt="Screenshot 2026-09-22 at 3 20 08 AM" src="https://github.com/user-attachments/assets/5a6def1a-ee2e-44e8-80df-1593ee4278c2" />
 <img width="1404" height="753" alt="Screenshot 2026-09-22 at 3 20 30 AM" src="https://github.com/user-attachments/assets/e5c182a9-a3b8-4ab9-97aa-1f02b6272e5a" />
-<img width="1404" height="753" alt="Screenshot 2026-09-22 at 3 18 19 AM" src="https://github.com/user-attachments/assets/784cb730-c682-4df0-a807-49d043973731" />
-<img width="1404" height="753" alt="Screenshot 2026-09-22 at 3 18 40 AM" src="https://github.com/user-attachments/assets/1d8488dd-8461-4a5a-8fd7-888a5fda0094" />
-<img width="1404" height="753" alt="Screenshot 2026-09-22 at 3 19 18 AM" src="https://github.com/user-attachments/assets/64313e15-2e1e-4c61-bc7f-2a33b42d70c7" />
-<img width="1404" height="753" alt="Screenshot 2026-09-22 at 3 19 41 AM" src="https://github.com/user-attachments/assets/38bdd2dc-ac41-4972-b85f-d46b3bc3122a" />
-<img width="1404" height="753" alt="Screenshot 2026-09-22 at 3 18 50 AM" src="https://github.com/user-attachments/assets/cf6dcfe2-d15d-4f67-8b2f-a243d7da4062" />
-<img width="1404" height="753" alt="Screenshot 2026-09-22 at 3 18 58 AM" src="https://github.com/user-attachments/assets/254ecc26-8350-4f07-87e6-cb07035bafc0" />
+<img width="1404" height="753" alt="Screenshot 2026-09-22 at 3 17 56 AM" src="https://github.com/user-attachments/assets/2837a91b-4a05-470f-a124-ceef76f23857" />
+<img width="1404" height="753" alt="Screenshot 2026-09-24 at 1 11 24 AM" src="https://github.com/user-attachments/assets/7f768f9c-81b8-4bf6-9826-8fbb632fe7bd" />
+<img width="1404" height="753" alt="Screenshot 2026-09-24 at 1 11 34 AM" src="https://github.com/user-attachments/assets/d1b8d33b-a8b5-4874-8316-69de0a8cd510" />
+<img width="1404" height="753" alt="Screenshot 2026-09-24 at 1 12 12 AM" src="https://github.com/user-attachments/assets/6e6dae22-fcdb-415d-8c17-0dda65b17d10" />
+<img width="1404" height="753" alt="Screenshot 2026-09-24 at 1 11 24 AM" src="https://github.com/user-attachments/assets/9d6e9c63-7cae-4c32-a3cd-aac87bbcda17" />
+<img width="1404" height="753" alt="Screenshot 2026-09-22 at 3 18 40 AM" src="https://github.com/user-attachments/assets/c6931fda-d45b-4412-885c-a98c6e22c984" />
+<img width="1404" height="753" alt="Screenshot 2026-09-22 at 3 19 18 AM" src="https://github.com/user-attachments/assets/c4de9da2-f35c-49b3-9e11-fef0fb0be3ca" />
+<img width="1404" height="753" alt="Screenshot 2026-09-22 at 3 19 41 AM" src="https://github.com/user-attachments/assets/0c60d019-7ffe-4cea-acf0-86fb9c253023" />
+<img width="1404" height="753" alt="Screenshot 2026-09-22 at 3 18 50 AM" src="https://github.com/user-attachments/assets/944feefd-3f6d-4cb7-9fe6-bd371617eda2" />
+<img width="1404" height="753" alt="Screenshot 2026-09-24 at 1 10 27 AM" src="https://github.com/user-attachments/assets/412a9f12-701d-4f55-ae96-f968e7e7448d" />
+<img width="1404" height="753" alt="Screenshot 2026-09-24 at 1 10 35 AM" src="https://github.com/user-attachments/assets/9b543349-2871-4cde-904f-40ed25d869d3" />
+<img width="1404" height="753" alt="Screenshot 2026-09-24 at 1 11 06 AM" src="https://github.com/user-attachments/assets/7edd92f4-bb3a-4004-8b31-344153448f34" />
