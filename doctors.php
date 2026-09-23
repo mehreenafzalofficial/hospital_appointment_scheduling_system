@@ -1,3 +1,12 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+session_start();
+require 'connection.php';
+
+$result = $conn->query("SELECT DID, Name, Specialization, Phone, SID, RNo FROM Doctors ORDER BY DID");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,6 +30,22 @@
             color: white;
             text-align: center;
             margin-bottom: 15px;
+        }
+
+        .add-doctor-btn {
+            display: block;
+            width: fit-content;
+            margin: 0 auto 20px;
+            padding: 10px 25px;
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .add-doctor-btn:hover {
+            opacity: 0.9;
         }
 
         .doctor-table {
@@ -49,7 +74,6 @@
             width: fit-content;
             margin: 25px auto 5px;
             color: white;
-           
         }
 
         .back:hover {
@@ -72,35 +96,29 @@
                 <th>Doctor ID</th>
                 <th>Doctor Name</th>
                 <th>Specialization</th>
-                <th>Available Days</th>
-                <th>Available Time</th>
+                <th>Phone</th>
+                <th>Room No</th>
             </tr>
 
-            <tr>
-                <td>D-01</td>
-                <td>Dr. Ahmed</td>
-                <td>Cardiologist</td>
-                <td>Monday - Friday</td>
-                <td>9:00 AM - 1:00 PM</td>
-            </tr>
-
-            <tr>
-                <td>D-02</td>
-                <td>Dr. Sara</td>
-                <td>Neurologist</td>
-                <td>Tuesday - Saturday</td>
-                <td>10:00 AM - 2:00 PM</td>
-            </tr>
-
-            <tr>
-                <td>D-03</td>
-                <td>Dr. Ali</td>
-                <td>Dermatologist</td>
-                <td>Monday - Thursday</td>
-                <td>11:00 AM - 3:00 PM</td>
-            </tr>
+            <?php if ($result && $result->num_rows > 0): ?>
+                <?php while ($row = $result->fetch_assoc()): ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($row['DID']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Name']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Specialization']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Phone']); ?></td>
+                        <td><?php echo htmlspecialchars($row['RNo']); ?></td>
+                    </tr>
+                <?php endwhile; ?>
+            <?php else: ?>
+                <tr>
+                    <td colspan="5" style="text-align:center;">No doctors found.</td>
+                </tr>
+            <?php endif; ?>
 
         </table>
+<br>
+        <a href="dregistration.php" class="add-doctor-btn">+ Add New Doctor</a>
 
         <a href="staff dashboard.php" class="back">
             Back to Dashboard
@@ -110,3 +128,4 @@
 
 </body>
 </html>
+<?php $conn->close(); ?>
