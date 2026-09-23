@@ -51,7 +51,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <button type="submit">Login</button>
         </form>
-        <a href="index.php" class="back" style="display:block; text-align:center; margin-top:15px; color:white;">Back to Home</a>
+
+        <!-- Naye users ke liye registration link -->
+        <p style="text-align:center; margin-top:15px; color:white;">
+            Don't have an account? <a href="pregistration.php" style="color: #4f4caf; text-decoration: underline;">Register here</a>
+        </p>
+
+        <a href="index.php" class="back" style="display:block; text-align:center; margin-top:10px; color:white;">Back to Home</a>
     </div>
 </body>
 </html>
